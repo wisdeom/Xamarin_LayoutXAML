@@ -2,7 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:Xamarin_LayoutXAML" 
-             x:Class="Xamarin_LayoutXAML.Xamarin_LayoutXAMLPage"
-             Padding="0,20,0,0">
-    <Label Text="Welcome to Xamarin Forms!" HorizontalOptions="Center" />
+             x:Class="Xamarin_LayoutXAML.Xamarin_LayoutXAMLPage">
+    <StackLayout>
+        <ContentPage.Padding>
+            <OnPlatform x:TypeArguments="Thickness"
+                        iOS="0,60,0,0"
+                        Android="0,40,0,0">
+            </OnPlatform>
+        </ContentPage.Padding>
+        <Label Text="Padding in XAML/Code Behind" HorizontalOptions="Center" />
+    </StackLayout>
 </ContentPage>
